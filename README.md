@@ -59,7 +59,7 @@ The backend is hosted on Render. You can access it at the following URL:
     ```bash
     curl -X POST https://library-management-system-eq7b.onrender.com/api/books/ \
     -H "Content-Type: application/json" \
-    -d '{"title": "Harry Potter", "author": "JK Rowling", "published_year": 2000, "genre": "Fiction", "available_copies": 5}'
+    -d '{"title": "Harry Potter", "author": "JK Rowling", "publishedYear": 2000, "genre": "Fiction", "availableCopies": 5}'
     ```
 
 
