@@ -43,14 +43,14 @@ The backend is hosted on Render. You can access it at the following URL:
 
 1. **Register a new user**:
     ```bash
-    curl -X POST https://library-management-system-eq7b.onrender.com/api/users/register \
+    curl -X POST https://library-management-system-eq7b.onrender.com/api/auth/register \
     -H "Content-Type: application/json" \
     -d '{"name": "John Doe", "email": "test@example.com", "password": "test@123", "membershipType": "regular"}'
     ```
 
 2. **Login and receive JWT**:
     ```bash
-    curl -X POST https://library-management-system-eq7b.onrender.com/api/users/login \
+    curl -X POST https://library-management-system-eq7b.onrender.com/api/auth/login \
     -H "Content-Type: application/json" \
     -d '{"email": "test@example.com", "password": "test@123"}'
     ```
