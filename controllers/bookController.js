@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Book = require("../models/BookModel");
+const User = require("../models/UserModel");
 
 module.exports.addBook = async (req, res) => {
   try {
@@ -78,9 +79,15 @@ module.exports.updateBook = async (req, res) => {
 module.exports.deleteBook = async (req, res) => {
   try {
     const id = req.params.id;
+    const userId = req.user._id;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ message: " Invalid id" });
+    }
+
+    const user = await User.findById(userId);
+    if (!user || !user.isAdmin) {
+      return res.status(403).json({ message: "No access" });
     }
 
     const book = await Book.findByIdAndDelete(id);
