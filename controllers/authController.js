@@ -82,7 +82,7 @@ module.exports.updateUser = async (req, res) => {
     user.membershipType = membershipType || user.membershipType;
     await user.save();
 
-    res.status(200).json({ message: "User saved" });
+    res.status(200).json({ message: "User updated" });
   } catch (error) {
     res.status(500).json({ message: "Internal Server Error" });
   }
