@@ -4,9 +4,9 @@ const JWT_TOKEN = process.env.JWT_TOKEN;
 
 module.exports.registerUser = async (req, res) => {
   try {
-    const { name, email, password, type } = req.body;
+    const { name, email, password, membershipType } = req.body;
 
-    if (!name || !email || !password || !type) {
+    if (!name || !email || !password || !membershipType) {
       return res.status(400).json({ message: "All fields must be present" });
     }
 
